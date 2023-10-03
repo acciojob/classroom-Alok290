@@ -36,7 +36,7 @@ private StudentService obj;
     }
 
     @PutMapping("/add-student-teacher-pair")
-    public ResponseEntity<String> addStudentTeacherPair(@RequestParam String student, @RequestParam String teacher) throws Exception{
+    public ResponseEntity<String> addStudentTeacherPair(@RequestParam String student, @RequestParam String teacher){
 
         obj.addPair(student,teacher);
         return new ResponseEntity<>("New student-teacher pair added successfully", HttpStatus.CREATED);

@@ -19,14 +19,14 @@ public class StudentService {
         obj.addTeachToDB(teacher);
     }
 
-    public void addPair(String student, String teacher) throws Exception{
+    public void addPair(String student, String teacher){
         Optional<Student> st = obj.getStudent(student);
         Optional<Teacher> teach = obj.getTeacher(teacher);
         if(st.isEmpty()){
-            throw new Exception("Student is not present in database");
+            throw new RuntimeException("Student is not present in database");
         }
         if(teach.isEmpty()){
-            throw new Exception("Teacher is not present in database");
+            throw new RuntimeException("Teacher is not present in database");
         }
         Teacher teacherObj = teach.get();
         teacherObj.setNumberOfStudents(teacherObj.getNumberOfStudents()+1);
