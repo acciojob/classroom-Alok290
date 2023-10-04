@@ -9,8 +9,7 @@ import java.util.Optional;
 @Service
 public class StudentService {
 
-    @Autowired
-    private StudentRepository obj;
+     StudentRepository obj = new StudentRepository();
     public void addStudent(Student student){
         obj.addStuToDB(student);
     }
