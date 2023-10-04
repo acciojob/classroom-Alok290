@@ -26,7 +26,7 @@ public class StudentService {
             throw new RuntimeException("Student is not present in database");
         }
         if(teach.isEmpty()){
-            throw new RuntimeException("student is not present in database");
+            throw new RuntimeException("teacher is not present in database");
         }
         Teacher teacherObj = teach.get();
         teacherObj.setNumberOfStudents(teacherObj.getNumberOfStudents()+1);
